@@ -8,7 +8,7 @@ app = Flask(__name__)
 @app.route("/codetostate")
 def getstate():
     code = request.args.get('code')
-    url = "http://dataservice.default.svc.cluster.local/codes"
+    url = "http://data-service-clusterip.default.svc.cluster.local/codes"
     response = requests.get(url)
     data = json.loads(response.text)
     result = data[code.upper()]
@@ -18,7 +18,7 @@ def getstate():
 @app.route("/statetocode")
 def getcode():
     state = request.args.get('state')
-    url = "http://dataservice.default.svc.cluster.local/states"
+    url = "http://data-service-clusterip.default.svc.cluster.local/states"
     response = requests.get(url)
     data = json.loads(response.text)
     result = data[state.lower()]
@@ -27,7 +27,7 @@ def getcode():
 
 @app.route("/")
 def welcome():
-    return Response("Welcome to dataservice", status=200)
+    return Response("Welcome to apiservice", status=200)
 
 
 if __name__ == "__main__":

@@ -1,11 +1,7 @@
 FROM tiangolo/uwsgi-nginx-flask:python3.9
 
-# copy over our requirements.txt file
-COPY requirements.txt /tmp/
+COPY ./requirements.txt /app/requirements.txt
 
-# upgrade pip and install required python packages
-RUN pip install -U pip
-RUN pip install -r /tmp/requirements.txt
+RUN pip install --no-cache-dir --upgrade -r /app/requirements.txt
 
-# copy over our app code
 COPY ./app /app

@@ -14,6 +14,6 @@ spec:
     spec:
       containers:
       - name: api-service
-        image: gcr.io/firstk8sproject-416700/api-service:latest
+        image: gcr.io/firstk8sproject-416700/api_service:v1
         ports:
         - containerPort: 80
