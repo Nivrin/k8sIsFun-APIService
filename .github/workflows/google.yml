@@ -60,8 +60,6 @@ jobs:
     - name: Deploy
       run: |-
         kubectl delete -f ./manifests/api_service-deployment.yaml
-#        kubectl delete -f ./manifests/api_service-service.yaml
         kubectl apply -f ./manifests/api_service-deployment.yaml
-#        kubectl apply -f ./manifests/api_service-service.yaml
         kubectl get pods
         kubectl get svc
