@@ -60,8 +60,7 @@ jobs:
     # Deploy the Docker image to the GKE cluster
     - name: Deploy
       run: |-
-#        kubectl delete -f ./manifests/api_service-deployment.yaml
-#        kubectl apply -f ./manifests/api_service-deployment.yaml
+
         kubectl set image deployment/api-service-deployment api-service-deployment="$GAR_ZONE-docker.pkg.dev/$PROJECT_ID/$GAR_REPO/$IMAGE:$IMAGE_TAG"
         
         kubectl get pods
