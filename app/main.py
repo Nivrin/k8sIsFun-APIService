@@ -25,7 +25,7 @@ def getcode():
     return json.dumps(result), 200
 
 
-@app.route("/")
+@app.route("/check")
 def welcome():
     return Response("Welcome to fasfasfa", status=200)
 
