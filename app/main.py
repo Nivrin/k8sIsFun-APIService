@@ -29,6 +29,7 @@ def getcode():
 def welcome():
     return Response("Welcome to api_service", status=200)
 
+
 @app.route("/healthz")
 def health_check():
     return '', 200
