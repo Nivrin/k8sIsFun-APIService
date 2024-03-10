@@ -13,7 +13,7 @@ spec:
         app: api-service
     spec:
       containers:
-      - name: data-service
+      - name: api-service
         image: gcr.io/${{ secrets.GKE_PROJECT }}/api_service:v1
         imagePullPolicy: Always
         ports:
