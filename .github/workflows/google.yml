@@ -34,39 +34,8 @@ jobs:
     # helper for authentication
     - name: Docker configuration
       run: |-
-       gcloud auth print-access-token | docker login -u oauth2accesstoken --password-stdin https://$GAR_ZONE-docker.pkg.dev
-
-    # Get the GKE credentials so we can deploy to the cluster
-    - name: Set up GKE credentials
-      uses: google-github-actions/get-gke-credentials@v1
-      with:
-        cluster_name: ${{ env.GKE_CLUSTER }}
-        location: ${{ env.GKE_ZONE }}
-    # --tag "$GAR_ZONE-docker.pkg.dev/$PROJECT_ID/$GAR_REPO/$IMAGE:$IMAGE_TAG" \
-    #  docker push "$GAR_ZONE-docker.pkg.dev/$PROJECT_ID/$GAR_REPO/$IMAGE:$IMAGE_TAG"
-    # Build the Docker image
-    - name: Build
-      run: |-
         cat ./app/main.py
-        docker build \
-          --tag "us-docker.pkg.dev/firstk8sproject-416700/gcr.io/api_service:v1" \
-          --build-arg GITHUB_SHA="$GITHUB_SHA" \
-          --build-arg GITHUB_REF="$GITHUB_REF" \
-          .
-        docker images
-    # Push the Docker image to Google Container Registry
-    - name: Publish
-      run: |-
-        docker push "us-docker.pkg.dev/firstk8sproject-416700/gcr.io/api_service:v1"
-
-    # Deploy the Docker image to the GKE cluster
-    - name: Deploy
-      run: |-
-        kubectl delete -f ./manifests/api_service-deployment.yaml
-        kubectl apply -f ./manifests/api_service-deployment.yaml
-        kubectl get pods
-        kubectl get svc
-       gcloud auth print-access-token | docker login -u oauth2accesstoken --password-stdin https://$GAR_ZONE-docker.pkg.dev
+        gcloud auth print-access-token | docker login -u oauth2accesstoken --password-stdin https://$GAR_ZONE-docker.pkg.dev
 
     # Get the GKE credentials so we can deploy to the cluster
     - name: Set up GKE credentials
