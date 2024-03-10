@@ -29,6 +29,10 @@ def getcode():
 def welcome():
     return Response("Welcome to api_service", status=200)
 
+@app.route("/healthz")
+def health_check():
+    return '', 200
+
 
 if __name__ == "__main__":
     app.run(host='0.0.0.0', debug=True, port=80)
