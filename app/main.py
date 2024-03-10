@@ -27,7 +27,7 @@ def getcode():
 
 @app.route("/")
 def welcome():
-    return Response("Welcome to 312123213", status=200)
+    return Response("Welcome to niv", status=200)
 
 
 if __name__ == "__main__":
