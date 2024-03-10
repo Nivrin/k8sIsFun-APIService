@@ -25,9 +25,9 @@ def getcode():
     return json.dumps(result), 200
 
 
-@app.route("/check")
+@app.route("/")
 def welcome():
-    return Response("Welcome to fasfasfa", status=200)
+    return Response("Welcome to 412412421", status=200)
 
 
 if __name__ == "__main__":
