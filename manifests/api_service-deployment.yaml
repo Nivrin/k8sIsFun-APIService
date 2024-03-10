@@ -14,7 +14,7 @@ spec:
     spec:
       containers:
       - name: api-service
-        image: gcr.io/firstk8sproject-416700/api_service:v1
+        image: gcr.io/${{ secrets.GKE_PROJECT }}/api_service:v1
         imagePullPolicy: Always
         ports:
         - containerPort: 80
