@@ -36,13 +36,7 @@ To deploy the API service, follow these steps:
     cd <project_directory>
     ```
 
-3. Install the required Python packages:
-
-    ```bash
-    pip install -r requirements.txt
-    ```
-
-4. Build the Docker image:
+3. Build the Docker image:
 
     ```bash
     docker build -t api-service .
