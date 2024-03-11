@@ -34,9 +34,7 @@ To use the API service, send HTTP requests to the appropriate endpoint:
 - **GET /statetocode**: Provide a state name as a query parameter named `state`.
   Example: `curl http://<api_service_url>/statetocode?state=New York`
 
-## Installation and Setup
-
-To deploy the API service, follow these steps:
+## Deployment
 
 1. Clone the repository:
 
@@ -53,23 +51,26 @@ To deploy the API service, follow these steps:
 3. Build the Docker image:
 
     ```bash
-    docker build -t api-service .
+    docker build -t gcr.io/${PROJECT_ID}/api_service:v1 .
     ```
+4. push the Docker image:
 
-## Deployment
+    ```bash
+    docker push gcr.io/${PROJECT_ID}/api_service:v1
+    ```
+ 5. Create a container cluster (if you haven't already done so)
+     ```bash
+    gcloud container clusters create <name> --num-nodes=1 
+     ```
+6. Apply the Kubernetes deployment configuration:
 
-To deploy the API service on Kubernetes, use the provided deployment and service YAML files:
-
-1. Apply the Kubernetes service configuration:
+    ```bash
+    kubectl apply -f manifests/front_app-deployment.yaml
+    ```
+7. Apply the Kubernetes service configuration:
 
     ```bash
     kubectl apply -f manifests/api_service-service.yaml
-    ```
-
-2. Apply the Kubernetes deployment configuration:
-
-    ```bash
-    kubectl apply -f manifests/api_service-deployment.yaml
     ```
 
 ## Continuous Integration/Continuous Deployment (CI/CD)
