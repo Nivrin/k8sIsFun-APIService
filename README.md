@@ -1,6 +1,6 @@
-# k8sisfun Project
+# k8sIsFun Project
 
-Welcome to the k8sisfun project! This repository is part of a larger project.
+Welcome to the k8sIsFun project! This repository is part of a larger project.
 
 ## Repositories
 
@@ -75,4 +75,4 @@ To use the API service, send HTTP requests to the appropriate endpoint:
 
 ## Continuous Integration/Continuous Deployment (CI/CD)
 
-We use GitHub Actions for CI/CD. The workflow defined in the `google.yaml` file automates the building, publishing, and deploying processes.
+I use GitHub Actions for CI/CD. The workflow defined in the `google.yaml` file automates the building, publishing, and deploying processes.
