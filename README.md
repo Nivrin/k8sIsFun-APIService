@@ -1,6 +1,6 @@
 # API Service Documentation
 
-Welcome to the documentation for our API service, which provides endpoints for retrieving state codes and names.
+Welcome to the documentation for my API service, which provides endpoints for retrieving state codes and names.
 
 ## Overview
 
