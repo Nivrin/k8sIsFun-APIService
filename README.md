@@ -65,7 +65,7 @@ To use the API service, send HTTP requests to the appropriate endpoint:
 6. Apply the Kubernetes deployment configuration:
 
     ```bash
-    kubectl apply -f manifests/front_app-deployment.yaml
+    kubectl apply -f manifests/api_service-deployment.yaml
     ```
 7. Apply the Kubernetes service configuration:
 
